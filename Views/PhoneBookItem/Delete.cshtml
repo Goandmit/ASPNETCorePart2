@@ -1,0 +1,63 @@
+﻿@model ASPNETCorePart2.Models.PhoneBookItem
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Телефонная книга</h1>
+
+<h3>Удаление записи</h3>
+<div>
+    <h4>Вы уверены, что хотите удалить эту запись?</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            Идентификатор
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+        <dt class = "col-sm-2">
+            Фамилия
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Surname)
+        </dd>
+        <dt class = "col-sm-2">
+            Имя
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            Отчество
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Patronymic)
+        </dd>
+        <dt class = "col-sm-2">
+            Номер телефона
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PhoneNumber)
+        </dd>
+        <dt class = "col-sm-2">
+            Домашний адрес
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+        <dt class = "col-sm-2">
+            Описание
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Удалить" class="btn btn-danger" /> |
+        <a asp-action="Index">Обратно к списку</a>
+    </form>
+</div>

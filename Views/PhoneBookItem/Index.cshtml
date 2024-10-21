@@ -1,0 +1,51 @@
+﻿@model IEnumerable<ASPNETCorePart2.Models.PhoneBookItem>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Телефонная книга</h1>
+
+<p>
+    <a asp-action="Create">Добавить запись</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Идентификатор
+            </th>
+            <th>
+                Фамилия
+            </th>
+            <th>
+                Имя
+            </th>
+            <th>
+                Отчество
+            </th>                       
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                <a asp-action="Details" asp-route-id="@item.Id">@Html.DisplayFor(modelItem => item.Id)</a>                
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Surname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Patronymic)
+            </td>                    
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Редактировать запись</a> |            
+                <a asp-action="Delete" asp-route-id="@item.Id">Удалить запись</a>
+            </td>
+        </tr>}
+    </tbody>
+</table>
