@@ -1,0 +1,27 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+      font-size: 16px;
+  }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+h1 {
+    margin-bottom: 30px;
+}
+
+input {    
+    margin-bottom: 10px;
+}
